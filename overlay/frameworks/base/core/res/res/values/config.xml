@@ -660,4 +660,7 @@
     
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">false</bool>
+
+    <!-- Wi-Fi display -->
+    <bool name="config_enableWifiDisplay">true</bool>
 </resources>
