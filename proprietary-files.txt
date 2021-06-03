@@ -149,6 +149,8 @@ system_ext/lib64/libfm-hci.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 
 # IMS
+<<<<<<< HEAD
+=======
 #system_ext/lib64/lib-imsvideocodec.so
 #system_ext/lib64/lib-imsvt.so
 #system_ext/lib64/lib-imsvtextutils.so
@@ -160,6 +162,7 @@ system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 #-system_ext/priv-app/ims/ims.apk
 
 # IMS
+>>>>>>> parent of f904d20 (adapt LOS)
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
@@ -285,12 +288,15 @@ system_ext/etc/permissions/qti_permissions.xml
 # Postprocessing
 system_ext/lib64/vendor.display.color@1.0.so
 
+<<<<<<< HEAD
+=======
 # RIL
 #-system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 #system_ext/etc/permissions/qcrilhook.xml
 #system_ext/etc/permissions/telephonyservice.xml
 #system_ext/framework/qcrilhook.jar
 #-system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+>>>>>>> parent of f904d20 (adapt LOS)
 
 # Telephony
 etc/permissions/privapp-permissions-qti.xml

@@ -42,7 +42,10 @@ PRODUCT_PACKAGES += \
     FrameworksResTarget \
     DevicesOverlay \
     DevicesAndroidOverlay \
-    CarrierConfigResCommon
+    CarrierConfigResCommon \
+    NoCutoutOverlay \
+    NotchBarKiller
+
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -170,7 +173,8 @@ PRODUCT_PACKAGES += \
 
 # Overlay - notch style
 PRODUCT_PACKAGES += \
-    NotchNoFillOverlay
+    NotchNoFillOverlay \
+    NotchBarKiller 
 
 # Parts
 PRODUCT_PACKAGES += \
@@ -204,9 +208,7 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     TelecommResCommon \
     TelephonyResCommon \
-    WifiResCommon \
-    NoCutoutOverlay \
-    NotchBarKiller
+    WifiResCommon 
 
 # WiFi Display
 PRODUCT_PACKAGES += \

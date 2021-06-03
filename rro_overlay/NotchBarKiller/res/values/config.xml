@@ -13,19 +13,9 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <!-- Whether the display cutout region of the main built-in display should be forced to
+<!--  Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent).
-     -->
-    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
-
-    <string translatable="false" name="config_mainBuiltInDisplayCutout">M 0,0 L 0, 0 C 0,0 0,0 0,0</string>
-    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">@*android:string/config_mainBuiltInDisplayCutout</string>
-
-    <!-- Max visible notification icons -->
-    <integer name="config_maxVisibleNotificationIcons">17</integer>
-    <integer name="config_maxVisibleNotificationIconsWhenDark">17</integer>
-
+          -->
+<bool name="config_fillMainBuiltInDisplayCutout">false</bool>
 </resources>

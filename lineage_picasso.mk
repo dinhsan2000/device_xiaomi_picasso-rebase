@@ -15,7 +15,7 @@ $(call inherit-product, device/xiaomi/picasso/device.mk)
 $(call inherit-product, vendor/arrow/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := arrow_picasso
+PRODUCT_NAME := lineage_picasso
 PRODUCT_DEVICE := picasso
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi K30 5G
