@@ -148,21 +148,9 @@ system_ext/lib64/fm_helium.so
 system_ext/lib64/libfm-hci.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 
-# IMS
-<<<<<<< HEAD
-=======
-#system_ext/lib64/lib-imsvideocodec.so
-#system_ext/lib64/lib-imsvt.so
-#system_ext/lib64/lib-imsvtextutils.so
-#system_ext/lib64/lib-imsvtutils.so
-#system_ext/lib64/libdiag_system.so
-#system_ext/lib64/libimscamera_jni.so
-#system_ext/lib64/libimsmedia_jni.so
-#system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
-#-system_ext/priv-app/ims/ims.apk
+
 
 # IMS
->>>>>>> parent of f904d20 (adapt LOS)
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
