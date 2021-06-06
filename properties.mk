@@ -35,7 +35,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Telephony
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.telephony.default_network=33,22
+    ro.telephony.default_network=22,0
 
 # Vendor
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -49,3 +49,15 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.force_sw_gles=1 \
     ro.kernel.qemu.gles=0 \
     ro.opengles.version=196610
+
+# Power-saving props
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.vendor.use_data_netmgrd=true \
+    ro.vold.umsdirtyratio=20 \
+    ro.ril.disable.power.collapse=0 \
+    power.saving.mode=1 \
+    pm.sleep_mode=1
+
+# Seamless transfer
+PRODUCT_PRODUCT_PROPERTIES += \
+    sys.fflag.override.settings_seamless_transfer=true
