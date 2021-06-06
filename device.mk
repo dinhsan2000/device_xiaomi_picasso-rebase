@@ -179,7 +179,7 @@ PRODUCT_PACKAGES += \
 # Parts
 PRODUCT_PACKAGES += \
     XiaomiParts
-
+    
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.rc \
@@ -216,6 +216,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+
+# Youtube by Vanced Team
+PRODUCT_PACKAGES += \
+    Youtube
+
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml \
