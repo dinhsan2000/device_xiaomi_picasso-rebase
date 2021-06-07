@@ -1,3 +1,2 @@
-picasso_device_tree
-
-Device Tree for Fork LineageOS 
+# picasso_device_tree
+ nothing to show
