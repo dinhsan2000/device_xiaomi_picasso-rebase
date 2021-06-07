@@ -1,2 +1,5 @@
 # picasso_device_tree
- nothing to show
+ 
+ PICASSO DEVICE TREE
+ 
+ REDMI K30 5G
