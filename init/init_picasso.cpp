@@ -27,10 +27,7 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <cstdlib>
 #include <fstream>
-#include <string.h>
-#include <sys/sysinfo.h>
 #include <unistd.h>
 #include <vector>
 
@@ -38,133 +35,49 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
+#include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
-using android::base::SetProperty;
+using android::init::property_set;
 
-char const *heapstartsize;
-char const *heapgrowthlimit;
-char const *heapsize;
-char const *heapminfree;
-char const *heapmaxfree;
-char const *heaptargetutilization;
-
-constexpr const char *RO_PROP_SOURCES[] = {
-    nullptr,   "product.", "product_services.", "odm.",
-    "vendor.", "system.", "system_ext.", "bootimage.",
+std::vector<std::string> ro_props_default_source_order = {
+    "",
+    "odm.",
+    "product.",
+    "system.",
+    "vendor.",
 };
-
-constexpr const char *PRODUCTS[] = {
-    "picasso",
-    "picasso_48m",
-};
-
-constexpr const char *DEVICES[] = {
-    "Redmi K30 5G",
-    "Redmi K30i 5G",
-};
-
-constexpr const char *BUILD_DESCRIPTION[] = {
-    "coral-user 11 RQ2A.210405.005 7181113 release-keys",
-};
-
-constexpr const char *BUILD_FINGERPRINT[] = {
-    "google/coral/coral:11/RQ2A.210405.005/7181113:user/"
-    "release-keys",
-};
-
-constexpr const char *CLIENT_ID[] = {
-    "android-xiaomi",
-};
-
-void check_device()
-{
-    struct sysinfo sys;
-
-    sysinfo(&sys);
-
-    if (sys.totalram >= 5ull * 1024 * 1024 * 1024){
-        // from - phone-xhdpi-6144-dalvik-heap.mk
-        heapstartsize = "16m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.5";
-        heapminfree = "8m";
-        heapmaxfree = "32m";
-    } else if (sys.totalram >= 7ull * 1024 * 1024 * 1024) {
-        // from - phone-xhdpi-8192-dalvik-heap.mk
-        heapstartsize = "24m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.46";
-        heapminfree = "8m";
-        heapmaxfree = "48m";
-    }
-}
 
 void property_override(char const prop[], char const value[], bool add = true) {
-  prop_info *pi;
+    prop_info *pi;
 
-  pi = (prop_info *)__system_property_find(prop);
-  if (pi)
-    __system_property_update(pi, value, strlen(value));
-  else if (add)
-    __system_property_add(prop, strlen(prop), value, strlen(value));
-}
-
-void load_props(const char *model, bool is_48 = false) {
-  const auto ro_prop_override = [](const char *source, const char *prop,
-                                   const char *value, bool product) {
-    std::string prop_name = "ro.";
-
-    if (product)
-      prop_name += "product.";
-    if (source != nullptr)
-      prop_name += source;
-    if (!product)
-      prop_name += "build.";
-    prop_name += prop;
-
-    property_override(prop_name.c_str(), value);
-  };
-
-  for (const auto &source : RO_PROP_SOURCES) {
-    ro_prop_override(source, "device", is_48 ? PRODUCTS[1] : PRODUCTS[0], true);
-    ro_prop_override(source, "model", model, true);
-    ro_prop_override(source, "fingerprint", BUILD_FINGERPRINT[0], false);
-    ro_prop_override(nullptr, "fingerprint", BUILD_FINGERPRINT[0], false);
-    ro_prop_override(nullptr, "description", BUILD_DESCRIPTION[0], false);
-    if (!is_48) {
-      ro_prop_override(source, "name", PRODUCTS[0], true);
-    } else {
-      ro_prop_override(source, "name", PRODUCTS[1], true);
-    }
-  }
-  ro_prop_override(nullptr, "description", BUILD_DESCRIPTION[0], false);
-  ro_prop_override(nullptr, "product", model, false);
-  ro_prop_override(nullptr, "com.google.clientidbase", CLIENT_ID[0], false);
-  property_override("ro.oem_unlock_supported", "0");
-  property_override("ro.boot.verifiedbootstate", "green");
-  property_override("ro.debuggable", "0");
-  property_override("ro.build.type", "user");
-
-  check_device();
-  SetProperty("dalvik.vm.heapstartsize", heapstartsize);
-  SetProperty("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-  SetProperty("dalvik.vm.heapsize", heapsize);
-  SetProperty("dalvik.vm.heaptargetutilization", heaptargetutilization);
-  SetProperty("dalvik.vm.heapminfree", heapminfree);
-  SetProperty("dalvik.vm.heapmaxfree", heapmaxfree);
+    pi = (prop_info *)__system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else if (add)
+        __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
 void vendor_load_properties() {
-  std::string variant;
-  variant = GetProperty("ro.product.vendor.name", "");
+    const auto set_ro_build_prop = [](const std::string &source,
+                                      const std::string &prop,
+                                      const std::string &value) {
+        auto prop_name = "ro." + source + "build." + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    };
 
-  if (variant == "picasso") {
-    load_props(DEVICES[0], false);
-  } else if (variant == "picasso_48m") {
-    load_props(DEVICES[1], true);
-  }
+    const auto set_ro_product_prop = [](const std::string &source,
+                                        const std::string &prop,
+                                        const std::string &value) {
+        auto prop_name = "ro.product." + source + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    };
+
+    for (const auto &source : ro_props_default_source_order) {
+        set_ro_product_prop(source, "brand", "Redmi");
+        set_ro_product_prop(source, "device", "picasso");
+        set_ro_product_prop(source, "model", "Redmi K30 5G");
+    }
+    property_override("ro.build.description", "coral-user 11 RP1A.201005.004 6782484 release-keys");
 }
