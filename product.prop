@@ -9,6 +9,7 @@ persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.camera
 
 # Telephony
+
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
