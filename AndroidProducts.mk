@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_picasso.mk
+    $(LOCAL_DIR)/cherish_picasso.mk
