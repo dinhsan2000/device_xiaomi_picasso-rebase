@@ -137,3 +137,5 @@ persist.dbg.video_on_5G=1
 # Blurs
 ro.surface_flinger.supports_background_blur=1
 ro.sf.blurs_are_expensive=1
+ro.surface_flinger.supports_background_blur=1
+ro.sf.blurs_are_expensive=1
