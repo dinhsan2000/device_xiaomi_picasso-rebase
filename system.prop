@@ -47,7 +47,9 @@ ro.product.property_source_order=odm,vendor,product,system_ext,system
 # Battery Property
 ro.charger.enable_suspend = 1
 
-
+# RIL
+persist.vendor.radio.aosp_usr_pref_sel=true
+ro.vendor.radio.features_common=3
 
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
