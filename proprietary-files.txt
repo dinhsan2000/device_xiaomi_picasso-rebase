@@ -276,16 +276,6 @@ system_ext/etc/permissions/qti_permissions.xml
 # Postprocessing
 system_ext/lib64/vendor.display.color@1.0.so
 
-<<<<<<< HEAD
-=======
-# RIL
-#-system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
-#system_ext/etc/permissions/qcrilhook.xml
-#system_ext/etc/permissions/telephonyservice.xml
-#system_ext/framework/qcrilhook.jar
-#-system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
->>>>>>> parent of f904d20 (adapt LOS)
-
 # Telephony
 etc/permissions/privapp-permissions-qti.xml
 etc/sysconfig/qti_whitelist.xml
