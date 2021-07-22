@@ -36,7 +36,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <!-- Color of the FOD view -->
     <color name="config_fodColor">#ffffff</color>
-    
+
     <!-- Unify back gesture vibration with system wide haptics -->
     <bool name="config_vibrateOnIconAnimation">true</bool>
+    
+    <!-- SELinux status -->
+    <bool name="config_show_selinux_status">true</bool>
 </resources>
