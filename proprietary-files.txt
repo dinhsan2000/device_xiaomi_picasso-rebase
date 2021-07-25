@@ -16,6 +16,35 @@ system_ext/lib/rfsa/adsp/libtracker_6dof_skel_8250.so
 system_ext/lib/com.qualcomm.qti.ant@1.0.so
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
+# Audio - from LA.QSSI.11.0.r1-08800-qssi.0
+system_ext/etc/permissions/audiosphere.xml|015ad7be4921039238bfa3d34d052d752453e49c
+-system_ext/framework/audiosphere.jar|9c28317f12b93a6d881c80a991ff24716fce4a12
+-system_ext/framework/vendor.qti.voiceprint-V1.0-java.jar|ebe2a70d176c6c23635c539feb528cf8fc93ad00
+system_ext/lib/libbinauralrenderer_wrapper.qti.so|bfd9efd7c8151b40fbb8ab2a1a193649254e8d28
+system_ext/lib/libhoaeffects_csim.so|f4c63bde973d625565131535e9b5471d74282e69
+system_ext/lib/libhoaeffects.qti.so|d3993bc80ccb5f4898c915be40cbc1e26b66455a
+system_ext/lib/liblistenjni.qti.so|53956a3686387e04ca328725c2cd3f42afd758bc
+system_ext/lib/liblistensoundmodel2.qti.so|afb9ec03aae8a01b6d3a2355ab3809a5dd338962
+system_ext/lib/libvr_amb_engine.so|b0df107f8ada261e7a5963292beb2ffe0364b588
+system_ext/lib/libvr_object_engine.so|fe2ad488354ab5428cf82ce3a5ad59a8c6deb015
+system_ext/lib/libvr_sam_wrapper.so|b73920c4b20b37d9f36bcf58d2ac5e6fe25f9225
+-system_ext/lib/libvraudio.so|6688a5ad7d8a7f5ee0d3b233822e00f7000c67eb
+system_ext/lib/libvraudio_client.qti.so|599e1e956b32d361cd3d20a10bc4f78f775fd239
+system_ext/lib/vendor.qti.hardware.audiohalext@1.0.so|59a3c89fc283664c63d72685421cb12da8cabbb8
+system_ext/lib/vendor.qti.voiceprint@1.0.so|6aa0e20f595ea41bdf576263ba138b3d3b176ed0
+system_ext/lib64/libbinauralrenderer_wrapper.qti.so|518a78cfff8a7c81aaa8c0b5e774808baee67c43
+system_ext/lib64/libhoaeffects_csim.so|393bcf69e0829db289ead407187c5c55685e8567
+system_ext/lib64/libhoaeffects.qti.so|678132d6f0ec095b25884c095fb118122a14d08f
+system_ext/lib64/liblistenjni.qti.so|0e451661de61d86b1a3a940012e315025f870569
+system_ext/lib64/liblistensoundmodel2.qti.so|baa6311f1f96baf57cc40233615e1770de9b556a
+system_ext/lib64/libvr_amb_engine.so|2e95a4584d9267a0d2e180df3cbdda734ec74fcc
+system_ext/lib64/libvr_object_engine.so|f8a10b8263d524e552c50151c0a8934978ecb040
+system_ext/lib64/libvr_sam_wrapper.so|1d944ad141cf82f5770300fa13498e716de116f8
+-system_ext/lib64/libvraudio.so|7f080532c0e73b1a7aa3ab3c740e4d5b48bd7897
+system_ext/lib64/libvraudio_client.qti.so|a523ab8c54e76279ad32c7c89e67f85ff76b94de
+system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so|74ceb53e753f816cf05a25dce69d93c67eb471fe
+system_ext/lib64/vendor.qti.voiceprint@1.0.so|1677d7e6765fd6484b91dc6b66afa9f11ee0a2ef
+
 # Bluetooth (aptX) - from sunfish RQ1A.201205.008
 #system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 #system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
